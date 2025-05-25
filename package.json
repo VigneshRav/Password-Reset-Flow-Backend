@@ -1,0 +1,35 @@
+{
+  "name": "password-reset-flow-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [
+    "node.js",
+    "express.js",
+    "cors",
+    "dotenv",
+    "nodemon",
+    "mongoDB",
+    "mongoose",
+    "bcrypt",
+    "JWT",
+    "nodemailer"
+  ],
+  "author": "Vignesh",
+  "license": "ISC",
+  "description": "Implementation of correct password reset flow with email verification and proper update of new password in the database for the web application",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.15.0",
+    "nodemailer": "^7.0.3",
+    "nodemon": "^3.1.10"
+  }
+}
