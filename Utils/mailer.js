@@ -20,7 +20,7 @@ const sendEmail = (To, Subject, Body) => {
     Subject,
     Body,
   };
-  return transporter.sendEmail(mailOptions);
+  return transporter.sendMail(mailOptions);
 };
 
 export default sendEmail;
