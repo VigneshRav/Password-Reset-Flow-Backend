@@ -14,7 +14,7 @@
     "JWT",
     "nodemailer"
   ],
-  "author": "Vignesh",
+  "author": "Vignesh R",
   "license": "ISC",
   "description": "Implementation of correct password reset flow with email verification and proper update of new password in the database for the web application",
   "type": "module",
