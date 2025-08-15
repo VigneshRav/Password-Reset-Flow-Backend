@@ -64,10 +64,10 @@ export const forgotPassword = async (req, res) => {
     await sendEmail(
       user.email,
       "Password Reset Link",
-      `you are receiving this because you try to reset your password for you account.
-      Click the following Link to complete the process 
+      `You have received this email, because you have requested to reset your password. 
+      Please click on the following link or copy & paste the link on your browser to reset your password. 
       https://password-reset-flow-reactapp.netlify.app/reset-password/${user._id}/${token} 
-      please ignore if you have not Requested for reset password`
+      Please kindly ignore this if you have not requested to reset your password.`
     );
 
     res.status(200).json({ message: "Email Sent Successfully" });
