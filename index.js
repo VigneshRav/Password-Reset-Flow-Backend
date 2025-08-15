@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
 });
 
 //Custom route
-app.use("/api/user", userRouter);
+app.use("/api/auth", userRouter);
 
 //Initialization of port
 const port = process.env.PORT || 4000;
