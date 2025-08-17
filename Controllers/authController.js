@@ -6,23 +6,29 @@ import sendEmail from "../Utils/mailer.js";
 
 dotenv.config();
 
-//Register user
+//Register or Sign Up
 
 export const userRegister = async (req, res) => {
   try {
     const { username, email, password } = req.body;
+    const existingUser = await users.findOne({ email });
+    if (existingUser) {
+      res
+        .status(409)
+        .json({ message: "The provided email address already exists" });
+    }
     const hashPassword = await bcrypt.hash(password, 10);
     const newUser = new users({ username, email, password: hashPassword });
     await newUser.save();
     res
       .status(200)
-      .json({ message: "user Registered Successfully", data: newUser });
+      .json({ message: "User Registered Successfully", data: newUser });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 };
 
-//login user
+//login or Sign In
 
 export const userLogin = async (req, res) => {
   try {
@@ -33,7 +39,7 @@ export const userLogin = async (req, res) => {
     }
     const passwordMatch = await bcrypt.compare(password, user.password);
     if (!passwordMatch) {
-      res.status(404).json({ message: "Invalid Password" });
+      res.status(401).json({ message: "Invalid Password" });
     }
     const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET_KEY, {
       expiresIn: "1h",
@@ -70,7 +76,9 @@ export const forgotPassword = async (req, res) => {
       Please kindly ignore this if you have not requested to reset your password.`
     );
 
-    res.status(200).json({ message: "Email Sent Successfully" });
+    res.status(200).json({
+      message: "Verification email sent successfully. Please check your Email",
+    });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -85,18 +93,17 @@ export const resetPassword = async (req, res) => {
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
     if (!decoded) {
-      return res.status(404).json({ message: "Invalid Token" });
+      return res.status(401).json({ message: "Invalid Token" });
     }
     const hashPassword = await bcrypt.hash(password, 10);
 
-    //update the user password in db
     const updateUser = await users.findByIdAndUpdate(
       id,
       { password: hashPassword },
       { new: true }
     );
     if (!updateUser) {
-      return res.status(404).json({ message: "User not Found" });
+      return res.status(404).json({ message: "User Not Found" });
     }
     res.status(200).json({ message: "Password Changed Succesfully" });
   } catch (error) {
