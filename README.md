@@ -1,6 +1,6 @@
 # 🔐 Password Reset Flow (Backend)
 
-This backend implements a **complete authentication system** with a secure **password reset flow** and **email notifications** using Nodemailer.It exposes REST APIs for:
+The **Password Reset Flow** project is a **full-stack authentication** module designed to provide users with a secure and reliable way to manage their accounts. It includes **user registration, login, forgot password, and password reset functionality** with real-time **email notifications** powered by **Nodemailer**. This solution is built with Node.js + Express.js for backend and React.js for frontend. It exposes REST APIs for:
 
 - **Register** (new user signup)  
 - **Login** (JWT-based authentication)  
@@ -11,43 +11,43 @@ This backend implements a **complete authentication system** with a secure **pas
 
 ## ✨ Features:-
 
-- ✅ User Registration with **bcrypt password hashing**
+- ✅ User Registration with **bcrypt password hashing**.
 
-- ✅ User Login with **JWT authentication**
+- ✅ User Login with **JWT authentication**.
 
-- ✅ **Forgot Password** endpoint to request reset link
+- ✅ **Forgot Password** endpoint to request reset link.
 
-- ✅ **Reset Password** endpoint with secure token validation
+- ✅ **Reset Password** endpoint with secure token validation.
 
-- ✅ **Nodemailer** integration for email notifications
+- ✅ **Nodemailer** integration for email notifications.
 
 - ✅ **MongoDB with Mongoose** for persistence schema-based modeling.
 
-- ✅Structured using the **MVC architecture**
+- ✅Structured using the **MVC architecture**.
 
-- ✅Input validation and error handling
+- ✅Input validation and error handling.
 
-- ✅RESTful API design with clear endpoints
+- ✅RESTful API design with clear endpoints.
 
-- ✅API tested and documented via **Postman**
+- ✅API tested and documented via **Postman**.
 
-- ✅Environment-based configuration
+- ✅Environment-based configuration.
 
 ---
 
-## 📦 Technologies Used:
+## 📦 Technologies Used:-
 
-- **Node.js** – JavaScript runtime environment
+- **Node.js** – JavaScript runtime environment.
 
-- **Express.js** – Web Application framework for Node.js
+- **Express.js** – Web Application framework for Node.js.
 
-- **MongoDB** – NoSQL database for data storage
+- **MongoDB** – NoSQL database for data storage.
 
-- **Mongoose** – ODM for MongoDB
+- **Mongoose** – ODM for MongoDB.
 
-- **Postman** – API testing and documentation
+- **Postman** – API testing and documentation.
 
-- **dotenv** – For managing environment variables
+- **dotenv** – For managing environment variables.
 
 - **JWT** - For generating a Json Web Token(JWT) upon successful login.
 
@@ -69,18 +69,18 @@ This backend implements a **complete authentication system** with a secure **pas
 
 ---
 
-## API Endpoints:
+## API Endpoints:-
 
 | **Method** |           **Endpoint**              |         **Description**           |
 | ---------- | ------------------------------------| --------------------------------- |
-| POST       | /api/auth/register                  | For Register or Sign Up user      |
-| POST       | /api/auth/login                     | For Login or Sign In user         |
-| POST       | /api/auth/forgot-password           | For forgot password               |
-| POST       | /api/auth/reset-password/:id/:token | For reset password                |
+| POST       | /api/auth/register                  | For Register or Sign Up           |
+| POST       | /api/auth/login                     | For Login or Sign In              |
+| POST       | /api/auth/forgot-password           | For Forgot password               |
+| POST       | /api/auth/reset-password/:id/:token | For Reset password                |
 
 ---
 
-## Packages Installed:
+## Packages Installed:-
 
 - express
 
@@ -100,11 +100,13 @@ This backend implements a **complete authentication system** with a secure **pas
 
 ---
 
-## Error Handling & Validation:
+## Error Handling & Validation:-
 
-- 401 Invalid Credentials ---> When user enters invalid password
+- 401 Invalid Credentials ---> When user enters invalid password.
 
-- 404 Not Found --–> When user not found
+- 404 Not Found --–> When user not found.
+
+- 409 Conflict Error ---> When user registers with same email for the second time.
 
 - 500 Internal Server Error --–> For server-side issues.
 
@@ -112,15 +114,15 @@ This backend implements a **complete authentication system** with a secure **pas
 
 ---
 
-## Postman API Documentation:
+## Postman API Documentation:-
 
-- API tested and documented via Postman
+- API tested and documented via Postman.
 
-- Documentation link: 
+- Documentation link: https://documenter.getpostman.com/view/44995020/2sB3BHmUWt
 
 ---
 
-## 🙋‍♂️ Author & Contact
+## 🙋‍♂️ Author & Contact:-
 
 - Developed by: Vignesh R
 
